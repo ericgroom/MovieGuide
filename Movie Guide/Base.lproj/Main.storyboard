@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zED-4W-ggf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Movie Guide-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Movie_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,133 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HXs-4g-fJz">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="149" id="9xr-37-MAg" customClass="MovieCell" customModule="Movie_Guide" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="149"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9xr-37-MAg" id="TdF-yG-E1O">
+                                            <frame key="frameInset" width="375" height="148"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Martian" translatesAutoresizingMaskIntoConstraints="NO" id="e21-ph-db6">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="133" id="25b-PM-pza"/>
+                                                        <constraint firstAttribute="width" constant="90" id="8hn-QZ-QM6"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Martian" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdH-SR-CbT">
+                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GdH-SR-CbT" firstAttribute="centerY" secondItem="TdF-yG-E1O" secondAttribute="centerY" id="BfO-q6-BAt"/>
+                                                <constraint firstItem="GdH-SR-CbT" firstAttribute="leading" secondItem="e21-ph-db6" secondAttribute="trailing" constant="8" id="YnK-9J-2ex"/>
+                                                <constraint firstItem="e21-ph-db6" firstAttribute="leading" secondItem="TdF-yG-E1O" secondAttribute="leading" constant="15" id="cQm-nN-ddl"/>
+                                                <constraint firstItem="e21-ph-db6" firstAttribute="centerY" secondItem="TdF-yG-E1O" secondAttribute="centerY" id="hJM-9W-chQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="GdH-SR-CbT" secondAttribute="trailing" constant="8" id="mbq-Uu-2jZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="posterImage" destination="e21-ph-db6" id="eXE-NO-2CY"/>
+                                            <outlet property="titleLabel" destination="GdH-SR-CbT" id="xrg-05-VYa"/>
+                                            <segue destination="z3I-OH-FId" kind="show" id="ico-es-2HJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HXs-4g-fJz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QfF-b6-NFf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HXs-4g-fJz" secondAttribute="bottom" id="Snx-a8-MwZ"/>
+                            <constraint firstAttribute="trailing" secondItem="HXs-4g-fJz" secondAttribute="trailing" id="oh9-gf-Xzz"/>
+                            <constraint firstItem="HXs-4g-fJz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pqt-XZ-OTO"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Movie Guide" id="0LG-gW-PMt"/>
+                    <connections>
+                        <outlet property="tableView" destination="HXs-4g-fJz" id="1Nm-wE-9lu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="111.99400299850076"/>
+        </scene>
+        <!--Movie Details-->
+        <scene sceneID="XAs-Om-PyV">
+            <objects>
+                <viewController id="z3I-OH-FId" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C2N-31-TxN"/>
+                        <viewControllerLayoutGuide type="bottom" id="H9t-5Y-zFl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z2n-Mh-Jfe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="martian-gallery3-gallery-image" translatesAutoresizingMaskIntoConstraints="NO" id="gbC-cu-cv2">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="1VT-7V-kmc"/>
+                                    <constraint firstAttribute="height" constant="205" id="ccJ-nZ-UMB"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="The Martian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3T-uP-fwk">
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdn-uG-HCd">
+                                <string key="text">A very good movie. Keeps you on the edge of your seat and makes you think about the possibilites and dangers of colonizing another planet</string>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gbC-cu-cv2" firstAttribute="leading" secondItem="Z2n-Mh-Jfe" secondAttribute="leading" id="H11-1y-s92"/>
+                            <constraint firstItem="D3T-uP-fwk" firstAttribute="centerX" secondItem="Z2n-Mh-Jfe" secondAttribute="centerX" id="HKf-RJ-iUb"/>
+                            <constraint firstItem="Mdn-uG-HCd" firstAttribute="leading" secondItem="Z2n-Mh-Jfe" secondAttribute="leadingMargin" constant="8" id="MLO-5q-11R"/>
+                            <constraint firstItem="H9t-5Y-zFl" firstAttribute="top" secondItem="Mdn-uG-HCd" secondAttribute="bottom" constant="8" id="XSh-nh-PwE"/>
+                            <constraint firstItem="Mdn-uG-HCd" firstAttribute="top" secondItem="D3T-uP-fwk" secondAttribute="bottom" constant="8" id="Yl8-yt-Iwo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mdn-uG-HCd" secondAttribute="trailing" constant="8" id="hkn-xx-8ZX"/>
+                            <constraint firstAttribute="trailing" secondItem="gbC-cu-cv2" secondAttribute="trailing" id="hwL-6v-odc"/>
+                            <constraint firstItem="gbC-cu-cv2" firstAttribute="top" secondItem="C2N-31-TxN" secondAttribute="bottom" id="yUg-Q1-dwj"/>
+                            <constraint firstItem="D3T-uP-fwk" firstAttribute="top" secondItem="gbC-cu-cv2" secondAttribute="bottom" constant="25" id="ysz-Ro-ELl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Movie Details" id="ENj-gq-zPQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2hs-X5-KlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2005.5999999999999" y="111.99400299850076"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3AH-sm-540">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zED-4W-ggf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QcQ-gt-AYB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cQM-cK-87U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cXN-f1-BC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="111.99400299850076"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Martian" width="185" height="273"/>
+        <image name="martian-gallery3-gallery-image" width="2000" height="1076"/>
+    </resources>
 </document>
