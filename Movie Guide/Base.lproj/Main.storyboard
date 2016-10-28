@@ -66,7 +66,9 @@
                             <constraint firstItem="HXs-4g-fJz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pqt-XZ-OTO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Movie Guide" id="0LG-gW-PMt"/>
+                    <navigationItem key="navigationItem" title="Movie Guide" id="0LG-gW-PMt">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Bo2-IB-mdl"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="HXs-4g-fJz" id="1Nm-wE-9lu"/>
                     </connections>
@@ -134,9 +136,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zED-4W-ggf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QcQ-gt-AYB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QcQ-gt-AYB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.47058823529411764" green="0.31764705882352939" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -18,24 +18,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie" translatesAutoresizingMaskIntoConstraints="NO" id="GGu-EX-xsm">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvN-DN-H1O">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launcher" translatesAutoresizingMaskIntoConstraints="NO" id="FaL-1C-Due">
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="181" id="Fwa-HY-nvN"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="GXy-lh-czh"/>
+                                            <constraint firstAttribute="width" constant="181" id="ZsT-VU-MCq"/>
+                                            <constraint firstAttribute="height" constant="181" id="cAx-04-BJZ"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="181" id="kbo-pd-R75"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="181" id="phn-O2-Fjq"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Guide" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upW-DP-EQh">
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="29"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.47058823529411764" green="0.31764705882352939" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="278" id="VTA-FW-2Um"/>
-                                    <constraint firstAttribute="width" constant="261" id="myS-zu-LO3"/>
+                                    <constraint firstItem="FaL-1C-Due" firstAttribute="centerX" secondItem="fvN-DN-H1O" secondAttribute="centerX" id="D2y-Jh-Nl2"/>
+                                    <constraint firstAttribute="height" constant="667" id="QXN-PN-X4Z"/>
+                                    <constraint firstItem="upW-DP-EQh" firstAttribute="top" secondItem="FaL-1C-Due" secondAttribute="bottom" constant="81" id="XmX-Bw-s9l"/>
+                                    <constraint firstItem="upW-DP-EQh" firstAttribute="centerX" secondItem="fvN-DN-H1O" secondAttribute="centerX" id="dBC-lN-BH6"/>
+                                    <constraint firstItem="FaL-1C-Due" firstAttribute="top" secondItem="fvN-DN-H1O" secondAttribute="top" constant="169" id="qxR-Uf-qiR"/>
                                 </constraints>
-                            </imageView>
-                            <label autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Guide" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tO8-d9-88o">
-                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="GGu-EX-xsm" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="om4-dq-WMh"/>
-                            <constraint firstItem="tO8-d9-88o" firstAttribute="trailing" secondItem="GGu-EX-xsm" secondAttribute="trailing" constant="-20" id="oyB-xy-BoP"/>
-                            <constraint firstItem="GGu-EX-xsm" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="xse-bE-UkL"/>
-                            <constraint firstItem="tO8-d9-88o" firstAttribute="bottom" secondItem="GGu-EX-xsm" secondAttribute="bottom" constant="-10" id="yrH-f2-Kd5"/>
+                            <constraint firstItem="fvN-DN-H1O" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="231-uN-94u"/>
+                            <constraint firstAttribute="trailing" secondItem="fvN-DN-H1O" secondAttribute="trailing" id="GbY-ed-zs7"/>
+                            <constraint firstItem="fvN-DN-H1O" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="VC8-3k-TGC"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="fvN-DN-H1O" secondAttribute="bottom" id="Wpg-vU-zZj"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -45,6 +61,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="movie" width="558" height="595"/>
+        <image name="Launcher" width="143" height="152"/>
     </resources>
 </document>

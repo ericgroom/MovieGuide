@@ -23,14 +23,16 @@ class MovieCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+        super.setSelected(false, animated: true)
         // Configure the view for the selected state
     }
     
     var movie : Movie! {
         didSet {
             titleLabel.text = movie.movieTitle
-            posterImage.af_setImage(withURL: URL(string: movie.moviePosterUrl!)!)
+            if(movie?.moviePosterUrl != nil) {
+                posterImage.af_setImage(withURL: URL(string: movie.moviePosterUrl!)!)
+            }
         }
     }
 
