@@ -30,6 +30,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView!.delegate = self
         tableView!.dataSource = self
         
+        self.tableView.addSubview(self.refreshControl)
+        
         //Realm db path: DEBUG
         print(Realm.Configuration.defaultConfiguration.description)
         
@@ -47,6 +49,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             makeAPICall()
         }
         
+    }
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        makeAPICall()
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +75,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 149 // forces the cell to use custom height
     }
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(ViewController.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
+        
+        return refreshControl
+    }()
     
     func makeAPICall() {
         Alamofire.request("https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)").validate().responseJSON { response in
