@@ -9,6 +9,11 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Realm
+import RealmSwift
+let apiKey = "98c2046d14dfc35855b29169f903a66e"
+
+let realmObject = try! Realm()
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -17,8 +22,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let cellReuseIdentifier = "movieCell"
     
-    let apiKey = "98c2046d14dfc35855b29169f903a66e"
-    
     var movies: [Movie]? = []
     
     override func viewDidLoad() {
@@ -26,7 +29,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView!.delegate = self
         tableView!.dataSource = self
-        makeAPICall()
+        
+        //Realm db path: DEBUG
+        print(Realm.Configuration.defaultConfiguration.description)
+        
+        let dbMovies = realmObject.objects(Movie.self)
+        
+        if dbMovies.count > 0 {
+            print("Found movies in DB")
+            var newMoviesArray = [Movie]()
+            for movie in dbMovies {
+                newMoviesArray.append(movie)
+            }
+            movies = newMoviesArray
+        } else {
+            //make API call and save data in the realm db
+            makeAPICall()
+        }
         
     }
 

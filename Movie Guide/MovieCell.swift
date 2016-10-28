@@ -30,7 +30,7 @@ class MovieCell: UITableViewCell {
     var movie : Movie! {
         didSet {
             titleLabel.text = movie.movieTitle
-            posterImage.af_setImage(withURL: movie.moviePosterUrl!)
+            posterImage.af_setImage(withURL: URL(string: movie.moviePosterUrl!)!)
         }
     }
 
