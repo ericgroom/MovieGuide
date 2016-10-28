@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -16,11 +17,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let cellReuseIdentifier = "movieCell"
     
+    let apiKey = "98c2046d14dfc35855b29169f903a66e"
+    
+    var movies: [Movie]? = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView!.delegate = self
         tableView!.dataSource = self
+        makeAPICall()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,22 +36,40 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return movies?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:MovieCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! MovieCell
-        cell.titleLabel.text = "Suicide Squad"
-        cell.posterImage.image = UIImage(named: "Martian")
-        print(cell.titleLabel.text)
+        cell.movie = movies?[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 149
+        return 149 // forces the cell to use custom height
     }
+    
+    func makeAPICall() {
+        Alamofire.request("https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)").validate().responseJSON { response in
+            switch response.result {
+            case .success(let data):
+                let json = JSON(data)
+                print("Connection to API successful!")
+                print("results: \(json)")
+                self.movies = Movie.movies(array: (json["results"].arrayObject as! [NSDictionary]))
+                self.tableView.reloadData()
+                print(self.movies?[0].movieTitle)
+            case .failure(let error):
+                print("ERROR: Unable to hit the API with status code: \(error)")
+                print("Got status message: \(error)")
+
+            }
+        }
+    }
+}
+
 
     
 
-}
+
 
