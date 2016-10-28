@@ -30,9 +30,7 @@ class MovieCell: UITableViewCell {
     var movie : Movie! {
         didSet {
             titleLabel.text = movie.movieTitle
-            //let url = URL(string: "http://image.tmdb.org/t/p/w500/i8VKy2dhezT9V8IDUIbeGtlUaVV.jpg") // test not working
-            let url: URL = movie.moviePosterUrl!
-            posterImage.af_setImage(withURL: url)
+            posterImage.af_setImage(withURL: movie.moviePosterUrl!)
         }
     }
 

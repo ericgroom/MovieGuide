@@ -55,10 +55,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             case .success(let data):
                 let json = JSON(data)
                 print("Connection to API successful!")
-                print("results: \(json)")
                 self.movies = Movie.movies(array: (json["results"].arrayObject as! [NSDictionary]))
                 self.tableView.reloadData()
-                print(self.movies?[0].movieTitle)
             case .failure(let error):
                 print("ERROR: Unable to hit the API with status code: \(error)")
                 print("Got status message: \(error)")
@@ -66,7 +64,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)
+        let movie = movies![indexPath!.row]
+        
+        let movieDetailController = segue.destination as! MovieDetailController
+        
+        movieDetailController.movie = movie
+    }
 }
+
+// nice color #7851A9
 
 
     
