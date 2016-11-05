@@ -24,6 +24,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var movies: [Movie]? = []
     
+    var categories = ["Now Playing", "Upcoming", "Top Rated"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,17 +65,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies?.count ?? 0
+        return 1
+    }
+    
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return categories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:MovieCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! MovieCell
-        cell.movie = movies?[indexPath.row]
+        // cell.movie = movies?[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 149 // forces the cell to use custom height
+        return 191 // forces the cell to use custom height
+    }
+    
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return categories[section]
     }
     
     lazy var refreshControl: UIRefreshControl = {

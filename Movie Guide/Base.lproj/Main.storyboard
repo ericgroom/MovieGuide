@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zED-4W-ggf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zED-4W-ggf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,39 +22,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HXs-4g-fJz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="191" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HXs-4g-fJz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="149" id="9xr-37-MAg" customClass="MovieCell" customModule="Movie_Guide" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="149"/>
+                                    <tableViewCell clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="191" id="9xr-37-MAg" customClass="MovieCell" customModule="Movie_Guide" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="191"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9xr-37-MAg" id="TdF-yG-E1O">
-                                            <frame key="frameInset" width="375" height="148"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Martian" translatesAutoresizingMaskIntoConstraints="NO" id="e21-ph-db6">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="133" id="25b-PM-pza"/>
-                                                        <constraint firstAttribute="width" constant="90" id="8hn-QZ-QM6"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Martian" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdH-SR-CbT">
-                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8e5-cA-Q9b">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="190.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="DqI-gn-y1E">
+                                                        <size key="itemSize" width="50" height="50"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="Dlp-4r-xsN">
+                                                            <rect key="frame" x="5" y="5" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="50n-0v-m7h">
+                                                                        <rect key="frame" x="-95" y="-39" width="240" height="128"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="50n-0v-m7h" secondAttribute="trailing" constant="-95" id="C2N-kg-tDr"/>
+                                                                <constraint firstItem="50n-0v-m7h" firstAttribute="leading" secondItem="Dlp-4r-xsN" secondAttribute="leading" constant="-95" id="TRR-AN-ayU"/>
+                                                                <constraint firstItem="50n-0v-m7h" firstAttribute="top" secondItem="Dlp-4r-xsN" secondAttribute="top" constant="-39" id="VKt-68-Fby"/>
+                                                                <constraint firstAttribute="bottom" secondItem="50n-0v-m7h" secondAttribute="bottom" constant="-39" id="d3t-qk-F6I"/>
+                                                            </constraints>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="9xr-37-MAg" id="O91-TO-zxJ"/>
+                                                        <outlet property="delegate" destination="9xr-37-MAg" id="KW9-A5-Rem"/>
+                                                    </connections>
+                                                </collectionView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="GdH-SR-CbT" firstAttribute="centerY" secondItem="TdF-yG-E1O" secondAttribute="centerY" id="BfO-q6-BAt"/>
-                                                <constraint firstItem="GdH-SR-CbT" firstAttribute="leading" secondItem="e21-ph-db6" secondAttribute="trailing" constant="8" id="YnK-9J-2ex"/>
-                                                <constraint firstItem="e21-ph-db6" firstAttribute="leading" secondItem="TdF-yG-E1O" secondAttribute="leading" constant="15" id="cQm-nN-ddl"/>
-                                                <constraint firstItem="e21-ph-db6" firstAttribute="centerY" secondItem="TdF-yG-E1O" secondAttribute="centerY" id="hJM-9W-chQ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="GdH-SR-CbT" secondAttribute="trailing" constant="8" id="mbq-Uu-2jZ"/>
+                                                <constraint firstItem="8e5-cA-Q9b" firstAttribute="leading" secondItem="TdF-yG-E1O" secondAttribute="leading" id="3iG-wG-ubW"/>
+                                                <constraint firstAttribute="bottom" secondItem="8e5-cA-Q9b" secondAttribute="bottom" id="7nP-x6-70k"/>
+                                                <constraint firstAttribute="trailing" secondItem="8e5-cA-Q9b" secondAttribute="trailing" id="cHW-RW-i3i"/>
+                                                <constraint firstItem="8e5-cA-Q9b" firstAttribute="top" secondItem="TdF-yG-E1O" secondAttribute="top" id="gcp-hi-5xA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="posterImage" destination="e21-ph-db6" id="eXE-NO-2CY"/>
-                                            <outlet property="titleLabel" destination="GdH-SR-CbT" id="xrg-05-VYa"/>
+                                            <outlet property="collectionView" destination="8e5-cA-Q9b" id="qgs-Zz-jOa"/>
+                                            <outlet property="posterImage" destination="50n-0v-m7h" id="PcA-fF-E89"/>
                                             <segue destination="z3I-OH-FId" kind="show" id="ico-es-2HJ"/>
                                         </connections>
                                     </tableViewCell>
@@ -90,17 +117,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="martian-gallery3-gallery-image" translatesAutoresizingMaskIntoConstraints="NO" id="gbC-cu-cv2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="205"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="1VT-7V-kmc"/>
                                     <constraint firstAttribute="height" constant="205" id="ccJ-nZ-UMB"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="The Martian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3T-uP-fwk">
+                                <rect key="frame" x="125" y="294" width="125" height="29"/>
                                 <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdn-uG-HCd">
+                                <rect key="frame" x="24" y="331" width="327" height="328"/>
                                 <string key="text">A very good movie. Keeps you on the edge of your seat and makes you think about the possibilites and dangers of colonizing another planet</string>
                                 <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -157,7 +187,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Martian" width="185" height="273"/>
         <image name="martian-gallery3-gallery-image" width="2000" height="1076"/>
     </resources>
 </document>
