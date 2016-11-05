@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Movie Guide/MovieCell.swift"
-            timestampString = "499798317.268829"
+            timestampString = "500070038.777506"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
             landmarkName = "MovieCell"
-            landmarkType = "4">
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

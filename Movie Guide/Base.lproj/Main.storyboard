@@ -52,6 +52,7 @@
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="50n-0v-m7h">
                                                                         <rect key="frame" x="-95" y="-39" width="240" height="128"/>
+                                                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     </imageView>
                                                                 </subviews>
                                                             </view>
@@ -78,7 +79,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="collectionView" destination="8e5-cA-Q9b" id="qgs-Zz-jOa"/>
-                                            <outlet property="posterImage" destination="50n-0v-m7h" id="PcA-fF-E89"/>
                                             <segue destination="z3I-OH-FId" kind="show" id="ico-es-2HJ"/>
                                         </connections>
                                     </tableViewCell>
