@@ -79,6 +79,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="collectionView" destination="8e5-cA-Q9b" id="qgs-Zz-jOa"/>
+                                            <outlet property="posterImage" destination="50n-0v-m7h" id="eb0-Z6-KTU"/>
                                             <segue destination="z3I-OH-FId" kind="show" id="ico-es-2HJ"/>
                                         </connections>
                                     </tableViewCell>

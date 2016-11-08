@@ -11,7 +11,7 @@ import AlamofireImage
 
 class MovieCell: UITableViewCell {
     
-    // @IBOutlet weak var posterImage: UIImageView!
+    @IBOutlet weak var posterImage: UIImageView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -28,16 +28,20 @@ class MovieCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-//     var movie : Movie! {
-//        didSet {
-//            if(movie?.moviePosterUrl != nil) {
-//             posterImage.af_setImage(withURL: URL(string: movie.moviePosterUrl!)!)
-//            }
-//        }
-//    }
+     var movie : Movie! {
+        didSet {
+            if(movie?.moviePosterUrl != nil) {
+             posterImage.af_setImage(withURL: URL(string: movie.moviePosterUrl!)!)
+            }
+        }
+    }
 
 
 }
+extension MovieCell : UICollectionViewCell {
+    
+}
+
 extension MovieCell : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
