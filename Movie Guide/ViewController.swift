@@ -32,6 +32,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView!.delegate = self
         tableView!.dataSource = self
         
+        
         self.tableView.addSubview(self.refreshControl)
         
         //Realm db path: DEBUG
@@ -75,6 +76,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:MovieCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! MovieCell
         // cell.movie = movies?[indexPath.row]
+        cell.movies = movies
+        cell.collectionView.dataSource = MovieCell()
+        cell.collectionView.delegate = MovieCell()
         return cell
     }
     

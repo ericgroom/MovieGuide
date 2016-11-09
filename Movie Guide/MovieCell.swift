@@ -11,11 +11,11 @@ import AlamofireImage
 
 class MovieCell: UITableViewCell {
     
-    @IBOutlet weak var posterImage: UIImageView!
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var titleLabel: UILabel!
+    
+    var movies: [Movie]? = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,18 +28,7 @@ class MovieCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-     var movie : Movie! {
-        didSet {
-            if(movie?.moviePosterUrl != nil) {
-             posterImage.af_setImage(withURL: URL(string: movie.moviePosterUrl!)!)
-            }
-        }
-    }
 
-
-}
-extension MovieCell : UICollectionViewCell {
-    
 }
 
 extension MovieCell : UICollectionViewDataSource {
@@ -49,11 +38,15 @@ extension MovieCell : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
+        let cell : MovieCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! MovieCollectionViewCell
+            cell.posterImage.af_setImage(withURL: URL(string: (movies?[indexPath.row].moviePosterUrl!)!)!)
         return cell
-    }
+        }
     
-}
+    }
+
+    
+
 
 extension MovieCell : UICollectionViewDelegateFlowLayout {
     

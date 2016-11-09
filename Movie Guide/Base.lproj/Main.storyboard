@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="191"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9xr-37-MAg" id="TdF-yG-E1O">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8e5-cA-Q9b">
@@ -43,7 +43,7 @@
                                                         <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="Dlp-4r-xsN">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="Dlp-4r-xsN" customClass="MovieCollectionViewCell">
                                                             <rect key="frame" x="5" y="5" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -62,6 +62,10 @@
                                                                 <constraint firstItem="50n-0v-m7h" firstAttribute="top" secondItem="Dlp-4r-xsN" secondAttribute="top" constant="-39" id="VKt-68-Fby"/>
                                                                 <constraint firstAttribute="bottom" secondItem="50n-0v-m7h" secondAttribute="bottom" constant="-39" id="d3t-qk-F6I"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="posterImage" destination="50n-0v-m7h" id="h4E-9j-eC4"/>
+                                                                <segue destination="z3I-OH-FId" kind="showDetail" id="Sz6-Vp-ZnI"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                     <connections>
@@ -79,8 +83,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="collectionView" destination="8e5-cA-Q9b" id="qgs-Zz-jOa"/>
-                                            <outlet property="posterImage" destination="50n-0v-m7h" id="eb0-Z6-KTU"/>
-                                            <segue destination="z3I-OH-FId" kind="show" id="ico-es-2HJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
