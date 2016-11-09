@@ -79,6 +79,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.movies = movies
         cell.collectionView.dataSource = MovieCell()
         cell.collectionView.delegate = MovieCell()
+        cell.collectionView.reloadData()
         return cell
     }
     

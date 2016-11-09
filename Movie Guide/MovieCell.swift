@@ -15,7 +15,7 @@ class MovieCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    var movies: [Movie]? = []
+    var movies: [Movie]! = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,14 +38,12 @@ extension MovieCell : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : MovieCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! MovieCollectionViewCell
-            cell.posterImage.af_setImage(withURL: URL(string: (movies?[indexPath.row].moviePosterUrl!)!)!)
+            let cell : MovieCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! MovieCollectionViewCell
+            cell.posterImage.af_setImage(withURL: URL(string: (movies![indexPath.row].moviePosterUrl!))!)
         return cell
         }
     
     }
-
-    
 
 
 extension MovieCell : UICollectionViewDelegateFlowLayout {
